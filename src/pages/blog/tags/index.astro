@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getTagHref, getTagSummaries } from "../../../utils/tags";
+
+const tags = getTagSummaries(await getCollection("blog"));
+---
+
+<BaseLayout pageTitle="Tags" showMainCard={false}>
+  <header
+    class="mb-6 rounded-lg bg-white p-5 shadow-sm sm:p-8 lg:p-12 dark:bg-gray-900"
+  >
+    <h1 class="mb-4">Tags</h1>
+    <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+      Browse articles by topic.
+    </p>
+  </header>
+
+  {
+    tags.length > 0 ? (
+      <ul class="flex flex-wrap gap-3">
+        {tags.map((tag) => (
+          <li>
+            <a
+              href={getTagHref(tag.name)}
+              class="inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 text-sm text-gray-700 shadow-sm transition-colors hover:text-blue-600 dark:bg-gray-900 dark:text-gray-300 dark:hover:text-blue-400"
+            >
+              <span>{tag.name}</span>
+              <span class="text-xs text-gray-400 dark:text-gray-500">
+                {tag.count}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        No tags have been added yet.
+      </p>
+    )
+  }
+</BaseLayout>
