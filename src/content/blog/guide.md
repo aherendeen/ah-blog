@@ -1,6 +1,6 @@
 ---
-title: "Getting Started with Mare Blog: Configuration and Usage Guide"
-description: "A comprehensive guide on configuring your site, managing pages, publishing posts, and executing CLI commands in Mare Blog."
+title: "Getting Started with AH Blog: Configuration and Usage Guide"
+description: "A comprehensive guide on configuring your site, managing pages, publishing posts, and executing CLI commands."
 pubDate: 2026-08-30T00:00:00
 featured: false
 tags: [astro, blogging]
@@ -15,7 +15,7 @@ This project ships with a working default configuration that you can customize t
 ```typescript
 export default defineConfig({
   lang: "en",
-  title: "Mare Blog",
+  title: "Andrew Herendeen",
   description: "A minimal, lightning-fast personal blog built with Astro.",
   author: "Andrew Herendeen",
   authorUrl: "https://www.github.com/aherendeen",

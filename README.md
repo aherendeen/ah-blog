@@ -1,10 +1,10 @@
-# Mare Blog 🥳
+# ah-blog
 
 A minimal, lightning-fast personal blog built with **Astro**.
 
 ## 🖼️ Preview
 
-![Mare Blog Preview](./src/assets/preview.png)
+![Preview](./src/assets/preview.png)
 
 👉 **[View Live Demo →](https://ah-blog.vercel.app)**
 
